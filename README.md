@@ -17,6 +17,7 @@ Will support operations like :
 ```java
 // If we use names to create person 
 
+// Alwasy starts with a male member
 familyTree.Create('Member Name');
 familyTree.AddSpouse('Member Name', 'Spouse Name');
 
