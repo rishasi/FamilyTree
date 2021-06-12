@@ -1,6 +1,6 @@
 # FamilyTree
 
-API design to create mode for a bloodlineand query relationships from it.
+**API design** to create mode for a bloodlineand query relationships from it.
 
 
 
@@ -109,3 +109,43 @@ familtyTree.getCousingOf('Person Name')
 // 'CousinOne Name', 'CousinTwo Name'
 ```
 
+
+
+### Internal design
+
+- We represent the bloodline by a  tree structure
+
+- A person is represented by `Person` class
+
+  ```java
+  public class Person {
+  	private String name;
+    private boolean isFemale;
+    
+    // Currently we will use name as id
+    // It is expect that if members have same name, we will append
+    // Roman numerals as suffix to names 
+    // e.g. "Rishu I" and "Rishu II"
+    private String id;
+  }
+  ```
+
+  
+
+- Each Node will have three fields : 
+
+  ```java
+  public class Node {
+  
+    // Represents a person from current bloodline
+  	private Person member;
+    
+    // Represents spouse of the member
+    private Person spouse;
+    
+    // Represents nodes with children of the member and spouse
+    private List<Node> children;
+  }
+  ```
+
+  
