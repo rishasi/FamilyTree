@@ -1,6 +1,0 @@
-io/ghar/family/tree/Node.java
- io.ghar.family.tree.Node
-io/ghar/family/tree/Person.java
- io.ghar.family.tree.Person
-io/ghar/family/tree/FamilyTree.java
- io.ghar.family.tree.FamilyTree

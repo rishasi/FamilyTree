@@ -1,2 +1,0 @@
-io/ghar/family/tree/tree/FamilyTreeTest.java
- io.ghar.family.tree.tree.FamilyTreeTest
