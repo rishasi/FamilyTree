@@ -47,20 +47,17 @@ public class FamilyTree {
             if (parent.getMember().getName().equals(parentName) || parent.getSpouse().getName().equals(parentName)){
                 List <Node> children = parent.getChildren();
                 int i = 0;
-
-                String namesToReturn = children.get(0).getMember().getName();
+                String childrenNames = children.get(0).getMember().getName();
 
                 for (i = 1; i < children.size(); i++) {
-                    namesToReturn = namesToReturn + ", " + children.get(i).getMember().getName();
+                    childrenNames = childrenNames + ", " + children.get(i).getMember().getName();
                     i++;
                 }
-
-                return namesToReturn;
+                return childrenNames;
             }
         }
         catch (Exception e){}
         return null;
-
     }
 
     // Search the node and its children recursively till it finds the node containing the member (or spouse)

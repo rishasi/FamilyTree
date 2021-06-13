@@ -42,4 +42,10 @@ public class FamilyTreeTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void getChildrenReturnNullIfNoChildren(){
+        var actual = familyTree.getChildrenOf("Ned Stark");
+        assertNull(actual);
+    }
 }
