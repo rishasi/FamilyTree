@@ -41,18 +41,21 @@ public class FamilyTree {
         return null;
     }
 
-    public String[] getChildrenOf(String parentName){
+    public String getChildrenOf(String parentName){
         try {
             Node parent = getNodeForPersonId(parentName, root);
             if (parent.getMember().getName().equals(parentName) || parent.getSpouse().getName().equals(parentName)){
                 List <Node> children = parent.getChildren();
-                String[] childrenName = new String[children.size()];
                 int i = 0;
-                for (Node child: children) {
-                    childrenName[i] = (child.getMember().getName());
+
+                String namesToReturn = children.get(0).getMember().getName();
+
+                for (i = 1; i < children.size(); i++) {
+                    namesToReturn = namesToReturn + ", " + children.get(i).getMember().getName();
                     i++;
                 }
-                return childrenName;
+
+                return namesToReturn;
             }
         }
         catch (Exception e){}

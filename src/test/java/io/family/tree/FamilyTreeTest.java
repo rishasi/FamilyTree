@@ -36,6 +36,7 @@ public class FamilyTreeTest {
     @Test
     void addChildrenReturnChildren(){
         familyTree.addChild("Grand Father", "Ned Stark", false);
+//        familyTree.addChild("Grand Father", "Eddard Stark", false);
         var expected = "Ned Stark";
         var actual = familyTree.getChildrenOf("Grand Father");
 
