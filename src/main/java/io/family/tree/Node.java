@@ -32,4 +32,8 @@ public class Node {
     public Person getSpouse(){
         return spouse;
     }
+
+    public void addChild(Node child){
+        children.add(child);
+    }
 }

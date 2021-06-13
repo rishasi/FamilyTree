@@ -16,7 +16,7 @@ public class FamilyTreeTest {
     }
 
     @Test
-    void getSpouseReturnSpouse(){
+    void addSpouseReturnSpouse(){
         familyTree.addSpouse("Grand Father", "Grand Mother");
         var expected = "Grand Mother";
         var actual = familyTree.getSpouseOf("Grand Father");
@@ -29,6 +29,15 @@ public class FamilyTreeTest {
         familyTree.addSpouse("Grand Father", "Grand Mother");
         var expected = "Grand Father";
         var actual = familyTree.getSpouseOf("Grand Mother");
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void addChildrenReturnChildren(){
+        familyTree.addChild("Grand Father", "Ned Stark", false);
+        var expected = "Ned Stark";
+        var actual = familyTree.getChildrenOf("Grand Father");
 
         assertEquals(expected, actual);
     }

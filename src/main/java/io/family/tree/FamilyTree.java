@@ -1,5 +1,8 @@
 package io.family.tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FamilyTree {
     final Node root;
 
@@ -16,24 +19,45 @@ public class FamilyTree {
         node.setSpouse(spouse);
     }
 
+    public void addChild(String ParentName, String ChildName, boolean isFemale){
+        Node parent = getNodeForPersonId(ParentName, root);
+        Person person = new Person(ChildName, isFemale);
+        Node child = new Node(person);
+        parent.addChild(child);
+    }
+
     // Returns spouse of person with id
     public String getSpouseOf(String memberId){
         try {
             Node couple = getNodeForPersonId(memberId, root);
-            if (couple == null){
-            return null;
-            }
-            else{
                 if (couple.getMember().getName().equals(memberId)){
                     return couple.getSpouse().getName();
                 }
-                if (couple.getSpouse().getName().equals(memberId)){
+                else if (couple.getSpouse().getName().equals(memberId)){
                     return couple.getMember().getName();
                 }
+        }
+        catch (Exception e){}
+        return null;
+    }
+
+    public String[] getChildrenOf(String parentName){
+        try {
+            Node parent = getNodeForPersonId(parentName, root);
+            if (parent.getMember().getName().equals(parentName) || parent.getSpouse().getName().equals(parentName)){
+                List <Node> children = parent.getChildren();
+                String[] childrenName = new String[children.size()];
+                int i = 0;
+                for (Node child: children) {
+                    childrenName[i] = (child.getMember().getName());
+                    i++;
+                }
+                return childrenName;
             }
         }
         catch (Exception e){}
         return null;
+
     }
 
     // Search the node and its children recursively till it finds the node containing the member (or spouse)
