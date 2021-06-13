@@ -18,17 +18,28 @@ public class FamilyTree {
 
     // Returns spouse of person with id
     public String getSpouseOf(String memberId){
-        Person spouse = getNodeForPersonId(memberId, root).getSpouse();
-        if(spouse == null){
+        try {
+            Node couple = getNodeForPersonId(memberId, root);
+            if (couple == null){
             return null;
+            }
+            else{
+                if (couple.getMember().getName().equals(memberId)){
+                    return couple.getSpouse().getName();
+                }
+                if (couple.getSpouse().getName().equals(memberId)){
+                    return couple.getMember().getName();
+                }
+            }
         }
-        return spouse.getName();
+        catch (Exception e){}
+        return null;
     }
 
-    // Search the node and its children recursively till it finds the node containing the member
+    // Search the node and its children recursively till it finds the node containing the member (or spouse)
     // If not found, returns null
     private Node getNodeForPersonId(String personId, Node node){
-        if(node.getMember().getId().equals(personId)){
+        if(node.getMember().getId().equals(personId) || node.getSpouse().getId().equals(personId)){
             return node;
         }
 
@@ -38,7 +49,6 @@ public class FamilyTree {
                 return found;
             }
         }
-
         return null;
     }
 }

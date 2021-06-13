@@ -23,4 +23,13 @@ public class FamilyTreeTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    void getSpouseForMemberOrNonMember(){
+        familyTree.addSpouse("Grand Father", "Grand Mother");
+        var expected = "Grand Father";
+        var actual = familyTree.getSpouseOf("Grand Mother");
+
+        assertEquals(expected, actual);
+    }
 }
