@@ -1,6 +1,6 @@
 # FamilyTree
 
-**API design** to create mode for a bloodlineand query relationships from it.
+**API design** to create model for a bloodline and query relationships from it.
 
 
 
@@ -149,4 +149,18 @@ familtyTree.getCousingOf('Person Name')
   }
   ```
 
-  
+
+---
+
+#### Task List:
+
+- [x] Allow creating Default tree
+- [x] Allow adding and querying Spouse and Children
+- [x] Test the above functionality
+
+This comletes the basic setup for the Tree. Next is to implement querying relationships.
+
+- [ ] Implement finding Grand Father for a member.
+- [ ] Implement finding Granch Child for a member/non-member.
+- [ ] Implement finding Aunt(s) for a member.
+
