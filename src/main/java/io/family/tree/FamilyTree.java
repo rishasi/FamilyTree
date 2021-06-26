@@ -63,16 +63,16 @@ public class FamilyTree {
     // Search the node and its children recursively till it finds the node containing the member (or spouse)
     // If not found, returns null
     private Node getNodeForPersonId(String personId, Node node){
-        if(node.getMember().getId().equals(personId) || node.getSpouse().getId().equals(personId)){
-            return node;
-        }
-
-        for (var child: node.getChildren()) {
-            var found = getNodeForPersonId(personId, child);
-            if(found != null){
-                return found;
+            if(node.getMember().getId().equals(personId) || node.getSpouse().getId().equals(personId)){
+                return node;
             }
-        }
+
+            for (var child: node.getChildren()) {
+                var found = getNodeForPersonId(personId, child);
+                if(found != null) {
+                    return found;
+                }
+            }
         return null;
     }
 }
