@@ -35,27 +35,19 @@ public class FamilyTreeTest {
 
     @Test
     void addChildrenReturnChildren(){
-        familyTree.addChild("Grand Father", "Ned Stark", false);
-//        familyTree.addChild("Grand Father", "Eddard Stark", false);
-        var expected = "Ned Stark";
-        var actual = familyTree.getChildrenOf("Grand Father");
+        familyTree.addNewChild("Grand Father", "Ned Stark", false);
+        familyTree.addNewChild("Ned Stark", "Rob Stark", false);
+        familyTree.addNewChild("Ned Stark", "Jon Snow", false);
+        var expected = "Rob Stark, Jon Snow";
+        var actual = familyTree.getChildrenOf("Ned Stark");
 
         assertEquals(expected, actual);
     }
 
     @Test
     void getChildrenReturnNullIfNoChildren(){
+        familyTree.addNewChild("Grand Father", "Ned Stark", false);
         var actual = familyTree.getChildrenOf("Ned Stark");
         assertNull(actual);
     }
-
-//    @Test
-//    void shouldFindFatherForMember(){
-//        familyTree.addChild("Grand Father", "Ned Stark", false);
-//        familyTree.addChild("Ned Stark", "Rob Stark", false);
-//        var expected = "Ned Start";
-//        var actual  = familyTree.getFather("Rob Stark");
-//
-//        assertEquals(expected, actual);
-//    }
 }
