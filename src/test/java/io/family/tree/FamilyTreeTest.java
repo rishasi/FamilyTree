@@ -50,4 +50,14 @@ public class FamilyTreeTest {
         var actual = familyTree.getChildrenOf("Ned Stark");
         assertNull(actual);
     }
+
+    @Test
+    void shouldFindFather(){
+        familyTree.addNewChild("Grand Father", "Ned Stark", false);
+        familyTree.addNewChild("Ned Stark", "Rob Stark", false);
+        familyTree.addNewChild("Ned Stark", "Jon Snow", false);
+        var expected = "Ned Stark";
+        var actual = familyTree.getFather("Jon Snow");
+        assertEquals(expected, actual);
+    }
 }
