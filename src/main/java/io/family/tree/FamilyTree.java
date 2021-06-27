@@ -80,7 +80,6 @@ public class FamilyTree {
     }
 
     protected String getFather(String child){
-
         Node parent = getParentNodeForMember(child, root);
         String father;
         if(parent!= null){
@@ -94,6 +93,15 @@ public class FamilyTree {
             }
         }
         return null;
+    }
+    
+    protected String getMother(String child){
+        String father = getFather(child);
+        String mother = null;
+        if(father!= null) {
+            mother = getSpouseOf(father);
+        }
+        return mother;
     }
 
     private Node getParentNodeForMember(String member, Node node){
