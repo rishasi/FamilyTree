@@ -78,4 +78,51 @@ public class FamilyTree {
         }
         return null;
     }
+
+    protected String getFather(String child){
+        Node parent = getParentNodeForMember(child, root);
+        String father;
+        if(parent!= null){
+            if(!parent.getMember().isFemale()){
+                father = parent.getMember().getName();
+                return father;
+            }
+            if(parent.getSpouse()!= null && parent.getMember().isFemale()){
+                father = parent.getSpouse().getName();
+                return father;
+            }
+        }
+        return null;
+    }
+    
+    protected String getMother(String child){
+        String father = getFather(child);
+        String mother = null;
+        if(father!= null) {
+            mother = getSpouseOf(father);
+        }
+        return mother;
+    }
+
+    private Node getParentNodeForMember(String member, Node node){
+        for(Node child: node.getChildren()){
+            if(child.getMember().getName().equals(member)){
+                return node;
+            }
+            var found = getParentNodeForMember(member, child);
+            if (found!= null){
+                return found;
+            }
+        }
+        return null;
+    }
+    
+    protected String getGrandFather(String member){
+        String father = getFather(member);
+        String grandFather = null;
+        if(father!= null){
+            grandFather = getFather(father);
+        }
+        return grandFather;
+    }
 }
