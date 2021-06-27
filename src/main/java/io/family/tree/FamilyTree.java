@@ -116,4 +116,13 @@ public class FamilyTree {
         }
         return null;
     }
+    
+    protected String getGrandFather(String member){
+        String father = getFather(member);
+        String grandFather = null;
+        if(father!= null){
+            grandFather = getFather(father);
+        }
+        return grandFather;
+    }
 }

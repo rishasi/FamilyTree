@@ -71,4 +71,15 @@ public class FamilyTreeTest {
         var actual = familyTree.getMother("Ned Stark");
         assertEquals(expected, actual);
     }
+
+    @Test
+    void shouldFindGrandFather(){
+        familyTree.addSpouse("Grand Father", "Grand Mother");
+        familyTree.addNewChild("Grand Father", "Ned Stark", false);
+        familyTree.addNewChild("Ned Stark", "Rob Stark", false);
+        familyTree.addNewChild("Ned Stark", "Jon Snow", false);
+        var expected = "Grand Father";
+        var actual = familyTree.getGrandFather("Rob Stark");
+        assertEquals(expected, actual);
+    }
 }
