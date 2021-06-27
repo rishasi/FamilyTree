@@ -160,7 +160,17 @@ familtyTree.getCousingOf('Person Name')
 
 This comletes the basic setup for the Tree. Next is to implement querying relationships.
 
-- [ ] Implement finding Grand Father for a member.
-- [ ] Implement finding Granch Child for a member/non-member.
+- [x] Implement finding Grand Father for a member.
+
+Before proceeding further, it makes sense to add logic for:
+
+- [ ] Find Cousing(s) for a member
+- [ ] Find Brother(s) for a member
+- [ ] Find Sister(s) for a member
+
+And then we can proceed with more complex relations:
+
+- [ ] Implement finding Granch Child(s) for a member/non-member.
 - [ ] Implement finding Aunt(s) for a member.
+- [ ] Find Uncle(s) for a member.
 
