@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/rishasi/family-tree-java/_apis/build/status/rishasi.FamilyTree?branchName=azure-pipelines)](https://dev.azure.com/rishasi/family-tree-java/_build/latest?definitionId=1&branchName=azure-pipelines)
+[![Build Status](https://dev.azure.com/rishasi/family-tree-java/_apis/build/status/rishasi.FamilyTree?branchName=main)](https://dev.azure.com/rishasi/family-tree-java/_build/latest?definitionId=1&branchName=main)
 
 # FamilyTree
 
