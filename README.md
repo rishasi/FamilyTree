@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/rishasi/family-tree-java/_apis/build/status/rishasi.FamilyTree?branchName=azure-pipelines)](https://dev.azure.com/rishasi/family-tree-java/_build/latest?definitionId=1&branchName=azure-pipelines)
+
 # FamilyTree
 
 **API design** to create model for a bloodline and query relationships from it.
